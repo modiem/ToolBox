@@ -1,0 +1,4 @@
+artifact_location: file:///Users/moyang/code/modiem/ToolBox/notebooks/mlruns/2
+experiment_id: '2'
+lifecycle_stage: active
+name: test-mlflow-class

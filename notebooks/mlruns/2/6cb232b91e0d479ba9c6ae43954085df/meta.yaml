@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/moyang/code/modiem/ToolBox/notebooks/mlruns/2/6cb232b91e0d479ba9c6ae43954085df/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '2'
+lifecycle_stage: active
+name: ''
+run_id: 6cb232b91e0d479ba9c6ae43954085df
+run_uuid: 6cb232b91e0d479ba9c6ae43954085df
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1611871814823
+status: 1
+tags: []
+user_id: unknown
