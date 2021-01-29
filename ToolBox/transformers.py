@@ -3,6 +3,21 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from ToolBox.utils import get_manhattan_distance, get_euclidian_distance, get_haversine_distance
 import pygeohash as gh
 
+class CustomScaler(TransformerMixin, BaseEstimator): 
+# TransformerMixin generates a fit_transform method from fit and transform
+# BaseEstimator generates get_params and set_params methods
+    
+    def __init__(self, shrink_factor):
+        self.shrink_factor = shrink_factor
+    
+    def fit(self, X, y=None):
+        self.means = X.mean()
+        return self
+    
+    def transform(self, X, y=None):
+        X_transformed = (X - self.means) / self.shrink_factor
+        return pd.DataFrame(X_transformed)
+
 class TimeFeaturesEncoder(BaseEstimator, TransformerMixin):
     """
         Extract the day of week (dow), the hour, the month and the year from a timestamp column.
@@ -41,7 +56,7 @@ class DistanceTransformer(BaseEstimator, TransformerMixin):
         self.lat2 = lat2
         self.lon1 = lon1
         self.lon2 = lon2
-        self.distance = distance
+        self.distance =distance
         
     def fit(self, X, y=None):
         return self
