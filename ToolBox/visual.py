@@ -11,9 +11,12 @@ class Visualizer(object):
         This function plot the cumulative explained variance ratio as the number of components increases.
         """
         plt.plot(explained_variance_ratio.cumsum())
+        df=pd.DataFrame(explained_variance_ratio.cumsum())
+        n=df[df[0]>=0.8].index[0]
         plt.xlabel('number of components')
         plt.ylabel('Cumulative percent of variance')  
         plt.axhline(y=0.8, c="g", linestyle="--", label="80%")
-        plt.legend()
+        plt.axvline(x=n, c="r", linestyle="--", label=f"N={n}")
+        plt.legend(loc="best")
         plt.grid()
         plt.show()
