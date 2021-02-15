@@ -15,8 +15,8 @@ class Visualizer(object):
         n=df[df[0]>=0.8].index[0]
         plt.xlabel('number of components')
         plt.ylabel('Cumulative percent of variance')  
-        plt.axhline(y=0.8, c="g", linestyle="--", label="80%")
-        plt.axvline(x=n, c="r", linestyle="--", label=f"N={n}")
+        plt.axhline(y=0.8, c="g", linestyle="--", label="80%", alpha=0.5)
+        plt.axvline(x=n, c="r", linestyle="--", label=f"N={n}", alpha=0.5)
         plt.legend(loc="best")
         plt.grid()
         plt.show()
